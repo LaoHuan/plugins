@@ -135,6 +135,10 @@ class InAppPurchaseAndroidPlatformAddition
     return QueryPurchaseDetailsResponse(
         pastPurchases: pastPurchases, error: error);
   }
+    
+  Future<PurchasesHistoryResult> queryPurchaseHistory(SkuType skuType) async {
+    return _billingClient.queryPurchaseHistory(skuType);
+  }
 
   /// Checks if the specified feature or capability is supported by the Play Store.
   /// Call this to check if a [BillingClientFeature] is supported by the device.
